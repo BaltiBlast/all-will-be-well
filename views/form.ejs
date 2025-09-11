@@ -1,7 +1,17 @@
 <%- include('partials/head.ejs'); -%>
 
-<section>
-  <h1>FORM</h1>
+<section class="title container">
+  <div class="tagline-bg shadow lato-bold">
+    <p class="tagline lato-bold">Raconte où tu en es aujourd’hui,</p>
+  </div>
+  <p class="subline lato-thin">ton futur toi verra le <span class="lato-regular">chemin parcouru.</span></p>
 </section>
+
+<form class="form-card shadow" action="#" method="post">
+  <input type="email" name="email" placeholder="exemple@domaine.com" required />
+  <input type="text" name="delay" placeholder="Dans combien de temps veux-tu relire ce message ?" />
+  <textarea name="message" rows="6" placeholder="Tout ira bien, sois tolérant avec toi."></textarea>
+  <button type="submit">SEND</button>
+</form>
 
 <%- include('partials/footer.ejs'); -%>
