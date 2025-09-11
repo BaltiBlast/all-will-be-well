@@ -6,6 +6,10 @@ body {
   padding: 0 1.5rem;
 }
 
+nav {
+  margin-bottom: 7rem;
+}
+
 nav a {
   text-decoration: none;
   color: white;
@@ -13,7 +17,6 @@ nav a {
 
 .title {
   text-align: center;
-  margin-top: 7rem;
 }
 
 .shadow {
@@ -66,4 +69,19 @@ nav a {
 
 .form-card button:hover {
   background-color: #5ed690;
+}
+
+.about {
+  max-width: 870px;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.about section {
+  padding: 1.5rem 2.5rem;
+}
+
+.about p,
+.about h3 {
+  color: black;
 }
