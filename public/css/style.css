@@ -1,31 +1,20 @@
 @import url("./fonts.css");
 
-body {
-  min-height: 100vh;
-  background: linear-gradient(90deg, #2a7b9b 0%, #57c785 50%, #eddd53 100%);
-  padding: 0 1.5rem;
-}
-
 nav {
-  margin-bottom: 7rem;
+  margin-bottom: 6rem;
 }
 
-nav a {
+.link-undecorate {
   text-decoration: none;
-  color: white;
 }
 
 .title {
   text-align: center;
 }
 
-.shadow {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
 .tagline-bg {
   display: inline-block;
-  background-color: white;
+  background-color: var(--color-white);
   border-radius: 6px;
   padding: 0 0.5rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -42,7 +31,7 @@ nav a {
 }
 
 .subline {
-  color: white;
+  color: var(--color-white);
   font-size: 2.5rem;
 }
 
@@ -50,14 +39,14 @@ nav a {
   max-width: 870px;
   margin: 4rem auto;
   padding: 1.5rem 2.5rem;
-  background: #fff;
+  background: var(--color-white);
   border-radius: 6px;
 }
 
 .form-card input,
 .form-card textarea {
   border-radius: 8px;
-  background-color: white;
+  background-color: var(--color-white);
   color: black;
 }
 
@@ -73,7 +62,7 @@ nav a {
 
 .about {
   max-width: 870px;
-  background: #fff;
+  background: var(--color-white);
   border-radius: 6px;
 }
 
@@ -84,4 +73,44 @@ nav a {
 .about p,
 .about h3 {
   color: black;
+}
+
+footer {
+  text-align: center;
+  color: var(--color-white);
+}
+
+footer hr {
+  border-top: 0.05rem solid var(--color-white);
+}
+
+footer img {
+  width: 1.5rem;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a,
+footer p {
+  color: var(--color-white);
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap; /* passe en colonne quand ça ne tient plus */
+  margin-block: 1.25rem 2rem;
+  /* margin-bottom: 2rem;
+  color: white; */
+}
+
+@media (max-width: 576px) {
+  nav {
+    justify-content: center !important;
+    flex-wrap: wrap;
+  }
 }
