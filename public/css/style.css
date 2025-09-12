@@ -52,6 +52,10 @@ footer img {
 }
 
 @media (max-width: 576px) {
+  .social-link {
+    gap: 1.5rem;
+  }
+
   nav {
     text-align: center;
     flex-direction: column;
