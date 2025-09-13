@@ -1,0 +1,15 @@
+<%- include('partials/head.ejs'); -%>
+
+<section class="error404">
+  <h1 class="pacifico"><a class="link-undecorate" href="/">All Will Be Well</a></h1>
+
+  <h2>Page non trouvée (erreur 404)</h2>
+  <p>Il semblerait que quelqu'un se soit perdu... 👀</p>
+  <a href="/" role="button" class="primary">Retour à l’accueil</a>
+</section>
+
+<% if (typeof footer === "undefined" || footer !== false) { %>
+<!--  -->
+<%- include('partials/footer.ejs'); -%>
+<!--  -->
+<% } %>

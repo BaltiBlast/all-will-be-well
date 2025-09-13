@@ -19,6 +19,7 @@
     <title>All Will Be Well</title>
   </head>
   <body class="container">
+    <% if (typeof navbar === "undefined" || navbar !== false) { %>
     <nav>
       <ul>
         <li>
@@ -30,4 +31,5 @@
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
+    <% } %>
 

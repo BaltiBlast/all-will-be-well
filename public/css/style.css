@@ -1,11 +1,17 @@
 @import url("./fonts.css");
 
-nav {
-  margin-bottom: 5rem;
-}
-
+/* ======================================================== */
+/* Generic */
+/* ======================================================== */
 .link-undecorate {
   text-decoration: none;
+}
+
+/* ======================================================== */
+/* Home page */
+/* ======================================================== */
+nav {
+  margin-bottom: 5rem;
 }
 
 .title {
@@ -34,24 +40,6 @@ nav {
   margin-bottom: 3.5rem;
 }
 
-footer {
-  text-align: center;
-  color: var(--color-white);
-}
-
-footer img {
-  width: 1.5rem;
-}
-
-.social-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-  flex-wrap: wrap;
-  margin-block: 1.25rem 2rem;
-}
-
 .textarea-wrapper {
   position: relative;
   display: inline-block;
@@ -77,6 +65,45 @@ footer img {
 #fake-placeholder.out {
   opacity: 0;
 }
+
+/* ======================================================== */
+/* 404 page */
+/* ======================================================== */
+.error404 {
+  min-height: 100vh; /* pleine hauteur */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+/* ======================================================== */
+/* Footer */
+/* ======================================================== */
+
+footer {
+  text-align: center;
+  color: var(--color-white);
+}
+
+footer img {
+  width: 1.5rem;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+  margin-block: 1.25rem 2rem;
+}
+
+/* ======================================================== */
+/* FX & Breakpoint */
+/* ======================================================== */
 
 .fade {
   transition: opacity 0.5s ease;
