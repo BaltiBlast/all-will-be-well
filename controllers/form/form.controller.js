@@ -4,7 +4,7 @@ const form = {
   },
 
   postMessage: (req, res) => {
-    console.log("form triggered");
+    console.log(req.body);
   },
 };
 
