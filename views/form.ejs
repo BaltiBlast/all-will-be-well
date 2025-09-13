@@ -10,9 +10,34 @@
 
   <form action="#" method="post">
     <article>
-      <input type="email" name="email" placeholder="exemple@domaine.com" required />
-      <input type="text" name="delay" placeholder="Dans combien de temps veux-tu relire ce message ?" />
-      <textarea name="message" rows="6" placeholder="Tout ira bien, sois tolérant avec toi."></textarea>
+      <label>
+        Prénom
+        <input type="text" name="name" placeholder="Florian" required />
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" placeholder="exemple@domaine.com" required />
+      </label>
+
+      <label>
+        Quand veux-tu recevoir ton message ?
+        <select name="delay" aria-label="Dans combien de temps veux-tu relire ce message ?" required>
+          <option selected disabled value="">Séléctionne un délai...</option>
+          <option>3 jours</option>
+          <option>1 semaine</option>
+          <option>1 mois</option>
+          <option>3 mois</option>
+        </select>
+      </label>
+
+      <label>
+        Message
+        <div class="textarea-wrapper">
+          <textarea id="message" name="message" rows="6" placeholder=""></textarea>
+          <span id="fake-placeholder"></span>
+        </div>
+      </label>
       <button type="submit">Envoyer !</button>
     </article>
   </form>
