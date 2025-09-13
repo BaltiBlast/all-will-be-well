@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const form = require("./controllers/form/form.controller.js");
-const { getForm } = form;
+const { getForm, postMessage } = form;
 
 const about = require("./controllers/about/about.controller.js");
 const { getAbout } = about;
@@ -12,6 +12,7 @@ const { get404 } = error404;
 
 router.get("/", getForm);
 router.get("/about", getAbout);
+router.post("/add-message", postMessage);
 
 // 404
 router.use(get404);
