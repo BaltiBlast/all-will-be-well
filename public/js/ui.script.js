@@ -1,8 +1,10 @@
 import { placeholders } from "./utils.script.js";
+const textarea = document.getElementById("message");
 
 const ux = {
   init: () => {
     ux.animatePlaceholder();
+    ux.characterCounter();
   },
   // ================================================================================ //
   // Textarea placeholder's animation
@@ -21,7 +23,6 @@ const ux = {
   },
 
   animatePlaceholder: () => {
-    const textarea = document.getElementById("message");
     const fakePlaceholder = document.getElementById("fake-placeholder");
     if (!textarea || !fakePlaceholder) return;
 
@@ -38,6 +39,17 @@ const ux = {
 
     textarea.addEventListener("input", () => {
       fakePlaceholder.style.display = textarea.value ? "none" : "block";
+    });
+  },
+
+  // ================================================================================ //
+  // Textarea character counter
+  // ================================================================================ //
+  characterCounter: () => {
+    const counter = document.getElementById("char-counter");
+    const max = textarea.getAttribute("maxlength");
+    textarea.addEventListener("input", () => {
+      counter.textContent = `${textarea.value.length} / ${max}`;
     });
   },
 };
