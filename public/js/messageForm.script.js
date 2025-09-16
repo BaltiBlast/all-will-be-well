@@ -66,6 +66,7 @@ const messageForm = {
     if (!formMessage || !modal) return;
 
     formMessage.addEventListener("submit", (e) => {
+      formSubmitButton.disabled = true;
       e.preventDefault();
       modal.showModal();
     });
