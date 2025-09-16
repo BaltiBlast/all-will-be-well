@@ -1,10 +1,15 @@
 import { placeholders } from "./utils.script.js";
+const formMessage = document.getElementById("formMessage");
 const textarea = document.getElementById("message");
+const modal = document.getElementById("confirmFormMessage");
+const closeModalButton = document.getElementById("messageFormClosedButton");
+const formSubmitButton = document.getElementById("messageFormSubmitButton");
 
 const messageForm = {
   init: () => {
     messageForm.animatePlaceholder();
     messageForm.characterCounter();
+    messageForm.confirmBeforeSubmit();
   },
 
   // ================================================================================ //
@@ -53,6 +58,27 @@ const messageForm = {
       counter.textContent = `${textarea.value.length} / ${max}`;
     });
   },
+
+  // ================================================================================ //
+  // Submtid form manager
+  // ================================================================================ //
+  confirmBeforeSubmit: () => {
+    if (!formMessage || !modal) return;
+
+    formMessage.addEventListener("submit", (e) => {
+      e.preventDefault();
+      modal.showModal();
+    });
+
+    closeModalButton.addEventListener("click", () => {
+      modal.close();
+    });
+
+    formSubmitButton.addEventListener("click", () => {
+      modal.close();
+      formMessage.submit();
+    });
+  },
 };
 
-export default messageForm;
+document.addEventListener("DOMContentLoaded", messageForm.init());

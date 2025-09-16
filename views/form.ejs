@@ -8,7 +8,7 @@
     <p class="subline lato-thin">ton futur toi verra le <span class="lato-regular">chemin parcouru.</span></p>
   </section>
 
-  <form action="/add-message" method="POST">
+  <form id="formMessage" action="/add-message" method="POST">
     <article>
       <!-- FLASH MESSAGE -->
       <% if (messages && messages.length > 0) { %> <% messages.forEach(m => { %>
@@ -42,9 +42,24 @@
           <span id="fake-placeholder"></span>
         </div>
       </label>
+
+      <dialog id="confirmFormMessage">
+        <article>
+          <p>Chaque email ne peut être utilisé qu'une seule fois à la fois.</p>
+          <p>Vous pourrez programmer un nouveau message uniquement après avoir reçu celui-ci.</p>
+          <p>Voulez-vous envoyer ce message tel quel ?</p>
+          <footer>
+            <button id="messageFormClosedButton" type="button">Revoir</button>
+            <button id="messageFormSubmitButton" type="button">Envoyer</button>
+          </footer>
+        </article>
+      </dialog>
+
       <button type="submit">Envoyer !</button>
     </article>
   </form>
 </div>
+
+<script type="module" src="/js/messageForm.script.js"></script>
 
 <%- include('partials/footer.ejs'); -%>
