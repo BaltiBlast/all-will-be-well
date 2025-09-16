@@ -1,8 +1,10 @@
-import ux from "./ui.script.js";
+import ux from "./ux.script.js";
+import messageForm from "./messageForm.script.js";
 
 const scriptManager = {
   init: () => {
     ux.init();
+    messageForm.init();
   },
 };
 
