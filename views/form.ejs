@@ -10,6 +10,10 @@
 
   <form action="/add-message" method="POST">
     <article>
+      <!-- FLASH MESSAGE -->
+      <% if (messages && messages.length > 0) { %> <% messages.forEach(m => { %>
+      <p class="<%= m.type %>-message"><%= m.text %></p>
+      <% }) %> <% } %>
       <label>
         Prénom
         <input type="text" name="name" placeholder="Florian" required />

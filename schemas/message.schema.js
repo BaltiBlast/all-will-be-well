@@ -9,6 +9,7 @@ const messageSchema = new Schema(
       trim: true,
       lowercase: true,
       unique: true,
+      index: true,
       match: [/^\S+@\S+\.\S+$/, "Format de l'email invalide"],
     },
     first_name: { type: String, required: [true, "Votre prénom est requis"], trim: true },

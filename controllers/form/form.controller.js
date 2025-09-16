@@ -12,11 +12,6 @@ const form = {
     let customDateMessage;
 
     switch (delay) {
-      // -> Just à test case
-      // case "test":
-      //   dateToSend.setDate(dateToSend.getDate());
-      //   customDateMessage = "";
-      //   break;
       case "3d":
         dateToSend.setDate(dateToSend.getDate() + 3);
         customDateMessage = "3 jours";
@@ -33,30 +28,37 @@ const form = {
         dateToSend.setMonth(dateToSend.getMonth() + 3);
         customDateMessage = "3 mois";
         break;
+      default:
+        // Flash message - error bad timing
+        req.flash("messages", { type: "error", text: "Délai invalide." });
+        return res.redirect("/");
     }
 
     try {
       const messageData = {
-        email: email,
+        email,
         first_name: name,
-        message: message,
+        message,
         date_to_send: dateToSend,
       };
 
-      const data = await MessageMapper.newMessage(messageData);
-      console.log("DATA RESEND", data);
+      await MessageMapper.newMessage(messageData);
 
-      res.json({ success: true, successMessage: `Message programé ! À dans ${customDateMessage} !` });
-    } catch (error) {
-      if (error.code === 11000) {
-        return res.json({ success: false, errorMessage: "L'email est déjà utilisé" });
-      } else {
-        console.log(error.message);
-        res.json({
-          success: false,
-          errorMessage: "Une erreur est survenu au moment de l'ajout. Veuillez résessayer plus tard",
-        });
+      // Flash message - success message added
+      req.flash("messages", { type: "success", text: `Message ajouté. À dans ${customDateMessage} 😄 !` });
+      return res.redirect("/");
+    } catch (err) {
+      if (err.code === 11000 && err.keyPattern?.email) {
+        // Flash message - email already exist
+        req.flash("messages", { type: "error", text: "Cet email est déjà utilisé." });
+        return res.redirect("/");
       }
+
+      console.error(err);
+
+      // Flash message - unknown error
+      req.flash("messages", { type: "error", text: "Une erreur est survenue. Veuillez réessayer plus tard" });
+      return res.redirect("/");
     }
   },
 };

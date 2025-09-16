@@ -7,6 +7,14 @@
   text-decoration: none;
 }
 
+.error-message {
+  color: #d93526;
+}
+
+.success-message {
+  color: #00895a;
+}
+
 /* ======================================================== */
 /* Home page */
 /* ======================================================== */
@@ -20,7 +28,6 @@ nav {
 
 .tagline-bg {
   display: inline-block;
-  background-color: var(--color-white);
   border-radius: 6px;
   padding: 0 0.5rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -85,7 +92,6 @@ nav {
 
 footer {
   text-align: center;
-  color: var(--color-white);
 }
 
 footer img {
