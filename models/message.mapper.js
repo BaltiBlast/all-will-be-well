@@ -8,6 +8,12 @@ class MessageMapper extends CoreMapper {
     const newMessage = new this.message(data);
     return await newMessage.save();
   }
+
+  async getMessagesForToday(data) {
+    return await this.message.find({
+      date_to_send: { $gte: data.start, $lte: data.end },
+    });
+  }
 }
 
 module.exports = MessageMapper;
