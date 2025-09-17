@@ -14,6 +14,10 @@ class MessageMapper extends CoreMapper {
       date_to_send: { $gte: data.start, $lte: data.end },
     });
   }
+
+  async deleteMessageById(id) {
+    return await this.message.findByIdAndDelete(id);
+  }
 }
 
 module.exports = MessageMapper;
