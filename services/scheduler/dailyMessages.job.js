@@ -1,19 +1,37 @@
+const cron = require("node-cron");
 const { MessageMapper } = require("../../models/index.mapper.js");
 
 async function initDailyJob() {
-  const start = new Date();
-  start.setHours(0, 0, 0, 0);
+  cron.schedule(
+    "0 7 * * *",
+    async () => {
+      console.log("[CRON] Lancement du job des messages du jour");
 
-  const end = new Date();
-  end.setHours(23, 59, 59, 999);
+      const start = new Date();
+      start.setHours(0, 0, 0, 0);
 
-  const dateData = {
-    start: start,
-    end: end,
-  };
+      const end = new Date();
+      end.setHours(23, 59, 59, 999);
 
-  const messages = await MessageMapper.getMessagesForToday(dateData);
-  //   console.log(messages);
+      const dateData = {
+        start: start,
+        end: end,
+      };
+
+      try {
+        const messages = await MessageMapper.getMessagesForToday(dateData);
+        console.log("Messages trouvés :", messages);
+        // TODO: service email
+        // TODO: model to delete message in DB
+      } catch (err) {
+        console.error("[CRON] Erreur dans le job :", err);
+      }
+    },
+    {
+      scheduled: true,
+      timezone: "Europe/Paris",
+    }
+  );
 }
 
 module.exports = initDailyJob;
