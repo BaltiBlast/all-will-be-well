@@ -1,4 +1,4 @@
-const { MessageMapper } = require("../../models/index.mapper.js");
+const { MessageMapper, CounterMapper } = require("../../models/index.mapper.js");
 
 const form = {
   getForm: (req, res) => {
@@ -43,6 +43,7 @@ const form = {
       };
 
       await MessageMapper.newMessage(messageData);
+      await CounterMapper.incrementCounter();
 
       // Flash message - success message added
       req.flash("messages", { type: "success", text: `Message ajouté. À dans ${customDateMessage} 😄 !` });
