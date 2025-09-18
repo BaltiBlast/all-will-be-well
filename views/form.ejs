@@ -8,6 +8,11 @@
     <p class="subline lato-thin">ton futur toi verra le <span class="lato-regular">chemin parcouru.</span></p>
   </section>
 
+  <article class="grid counter">
+    <p class="lato-light no-marge">Messages programmés : <span class="lato-bold"><%=messageWaiting%></span></p>
+    <p class="lato-light no-marge">Messages envoyés : <span class="lato-bold"><%=sentMessageCount%></span></p>
+  </article>
+
   <form id="formMessage" action="/add-message" method="POST">
     <article>
       <!-- FLASH MESSAGE -->

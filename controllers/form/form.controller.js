@@ -1,8 +1,17 @@
 const { MessageMapper, CounterMapper } = require("../../models/index.mapper.js");
 
 const form = {
-  getForm: (req, res) => {
-    res.render("form");
+  getForm: async (req, res) => {
+    try {
+      const messageWaiting = await MessageMapper.countPendingMessages();
+      const messageSent = await CounterMapper.getCounterMessageSent();
+      const { sentMessageCount } = messageSent;
+
+      return res.render("form", { messageWaiting, sentMessageCount });
+    } catch (error) {
+      console.log(err);
+      res.redirect("/");
+    }
   },
 
   postMessage: async (req, res) => {
@@ -43,7 +52,6 @@ const form = {
       };
 
       await MessageMapper.newMessage(messageData);
-      await CounterMapper.incrementCounter();
 
       // Flash message - success message added
       req.flash("messages", { type: "success", text: `Message ajouté. À dans ${customDateMessage} 😄 !` });
