@@ -1,6 +1,6 @@
 const cron = require("node-cron");
 const transporter = require("../nodemailer.js");
-const { MessageMapper } = require("../../models/index.mapper.js");
+const { MessageMapper, CounterMapper } = require("../../models/index.mapper.js");
 const { buildProgrammedMessageEmail } = require("../../utils/emailTemplate.js");
 
 const dailyTasks = {
@@ -30,6 +30,8 @@ const dailyTasks = {
             return;
           }
 
+          console.log(`[CRON] ${messages.length} récupérer pour aujourd'hui.`);
+
           for (const msg of messages) {
             await dailyTasks.processMessage(msg);
           }
@@ -50,12 +52,15 @@ const dailyTasks = {
   processMessage: async (msg) => {
     try {
       await dailyTasks.emailConfigurator(msg);
-      console.log(`✅ Envoyé à ${msg.email}`);
+      console.log(`[CRON] ✅ Envoyé à ${msg.email}`);
 
       await MessageMapper.deleteMessageById(msg._id);
-      console.log(`✅ Message de ${msg.first_name} supprimé de la BDD`);
+      console.log(`[CRON] ✅ Message de ${msg.first_name} supprimé de la BDD`);
+
+      await CounterMapper.incrementCounter();
+      console.log(`[CRON] ✅ Counter incrémenté`);
     } catch (err) {
-      console.error(`❌ Erreur avec ${msg.email}:`, err.message);
+      console.error(`[CRON] ❌ Erreur avec ${msg.email}:`, err.message);
     }
   },
 
