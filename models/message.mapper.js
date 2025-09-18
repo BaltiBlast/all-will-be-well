@@ -18,6 +18,10 @@ class MessageMapper extends CoreMapper {
   async deleteMessageById(id) {
     return await this.message.findByIdAndDelete(id);
   }
+
+  async countPendingMessages() {
+    return await this.message.countDocuments();
+  }
 }
 
 module.exports = MessageMapper;
