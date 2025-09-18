@@ -21,7 +21,7 @@ const form = {
 
     const token = req.body["g-recaptcha-response"];
     if (!token) {
-      req.flash("messages", { type: "error", text: "Captcha manquant." });
+      req.flash("messages", { type: "error", text: "Captcha manquant.", data: req.body });
       return res.redirect("/");
     }
 
@@ -38,13 +38,9 @@ const form = {
     const verifyData = await verifyRes.json();
 
     if (!verifyData.success) {
-      req.flash("messages", { type: "error", text: "Vérification reCAPTCHA échouée. Réessaie." });
+      req.flash("messages", { type: "error", text: "Vérification reCAPTCHA échouée. Réessaie.", data: req.body });
       return res.redirect("/");
     }
-
-    //=====================================================================================================//
-    //=====================================================================================================//
-    //=====================================================================================================//
 
     const dateToSend = new Date();
     let customDateMessage;
@@ -65,6 +61,10 @@ const form = {
       case "3m":
         dateToSend.setMonth(dateToSend.getMonth() + 3);
         customDateMessage = "3 mois";
+        break;
+      case "6m":
+        dateToSend.setMonth(dateToSend.getMonth() + 6);
+        customDateMessage = "6 mois";
         break;
       default:
         // Flash message - error bad timing

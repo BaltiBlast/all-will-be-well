@@ -33,7 +33,7 @@ const messageForm = {
     if (!textarea || !fakePlaceholder) return;
 
     let index = 0;
-
+    fakePlaceholder.style.display = textarea.value ? "none" : "block";
     messageForm.switchPlaceholder(fakePlaceholder, placeholders, index);
 
     setInterval(() => {

@@ -21,22 +21,29 @@
       <% }) %> <% } %>
       <label>
         Prénom
-        <input type="text" name="name" placeholder="Florian" required />
+        <input type="text" name="name" placeholder="Florian" required value="<%= messages[0]?.data?.name || '' %>" />
       </label>
 
       <label>
         Email
-        <input type="email" name="email" placeholder="exemple@domaine.com" required />
+        <input
+          type="email"
+          name="email"
+          placeholder="exemple@domaine.com"
+          required
+          value="<%= messages[0]?.data?.email || '' %>"
+        />
       </label>
 
       <label>
         Quand veux-tu recevoir ton message ?
         <select name="delay" aria-label="Dans combien de temps veux-tu relire ce message ?" required>
-          <option selected disabled value="">Séléctionne un délai...</option>
-          <option value="3d">3 jours</option>
-          <option value="1w">1 semaine</option>
-          <option value="1m">1 mois</option>
-          <option value="3m">3 mois</option>
+          <option selected disabled value="" <%= !messages[0]?.data?.delay ? "selected" : "" %>>Séléctionne un délai...</option>
+          <option value="3d" <%= messages[0]?.data?.delay === "3d" ? "selected" : "" %>>3 jours</option>
+          <option value="1w" <%= messages[0]?.data?.delay === "1w" ? "selected" : "" %>>1 semaine</option>
+          <option value="1m" <%= messages[0]?.data?.delay === "1m" ? "selected" : "" %>>1 mois</option>
+          <option value="3m" <%= messages[0]?.data?.delay === "3m" ? "selected" : "" %>>3 mois</option>
+          <option value="6m" <%= messages[0]?.data?.delay === "6m" ? "selected" : "" %>>6 mois</option>
         </select>
       </label>
 
@@ -51,7 +58,7 @@
             maxlength="2000"
             minlength="10"
             required
-          ></textarea>
+          ><%= messages[0]?.data?.message || '' %></textarea>
           <span id="fake-placeholder"></span>
         </div>
       </label>
