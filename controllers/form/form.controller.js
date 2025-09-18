@@ -1,3 +1,4 @@
+const querystring = require("node:querystring");
 const { MessageMapper, CounterMapper } = require("../../models/index.mapper.js");
 
 const form = {
@@ -6,8 +7,9 @@ const form = {
       const messageWaiting = await MessageMapper.countPendingMessages();
       const messageSent = await CounterMapper.getCounterMessageSent();
       const { sentMessageCount } = messageSent;
+      const siteKey = process.env.RECAPTCHA_SITE_KEY;
 
-      return res.render("form", { messageWaiting, sentMessageCount });
+      return res.render("form", { messageWaiting, sentMessageCount, siteKey });
     } catch (error) {
       console.log(err);
       res.redirect("/");
@@ -16,6 +18,33 @@ const form = {
 
   postMessage: async (req, res) => {
     const { email, name, message, delay } = req.body;
+
+    const token = req.body["g-recaptcha-response"];
+    if (!token) {
+      req.flash("messages", { type: "error", text: "Captcha manquant." });
+      return res.redirect("/");
+    }
+
+    const verifyRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: querystring.stringify({
+        secret: process.env.RECAPTCHA_SECRET_KEY,
+        response: token,
+        remoteip: req.ip,
+      }),
+    });
+
+    const verifyData = await verifyRes.json();
+
+    if (!verifyData.success) {
+      req.flash("messages", { type: "error", text: "Vérification reCAPTCHA échouée. Réessaie." });
+      return res.redirect("/");
+    }
+
+    //=====================================================================================================//
+    //=====================================================================================================//
+    //=====================================================================================================//
 
     const dateToSend = new Date();
     let customDateMessage;

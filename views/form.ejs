@@ -67,12 +67,15 @@
           </footer>
         </article>
       </dialog>
-
+      <label class="recaptcha-wrapper">
+        <div class="g-recaptcha" data-sitekey="<%= siteKey %>"></div>
+      </label>
       <button type="submit">Envoyer !</button>
     </article>
   </form>
 </div>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script type="module" src="/js/messageForm.script.js"></script>
 
 <%- include('partials/footer.ejs'); -%>

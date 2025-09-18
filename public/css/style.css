@@ -80,6 +80,15 @@ nav {
   justify-items: center;
 }
 
+.recaptcha-wrapper {
+  transform: scale(0.9); /* ajuste la taille */
+  transform-origin: 0 0; /* point d’ancrage */
+}
+
+.g-recaptcha {
+  margin: 0 auto; /* centre si nécessaire */
+}
+
 /* ======================================================== */
 /* 404 page */
 /* ======================================================== */
