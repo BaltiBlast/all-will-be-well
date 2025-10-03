@@ -1,5 +1,5 @@
 const querystring = require("node:querystring");
-const { MessageMapper, CounterMapper } = require("../../models/index.mapper.js");
+const { MessageMapper, CounterMapper, CounterVisitor } = require("../../models/index.mapper.js");
 
 const form = {
   getForm: async (req, res) => {
@@ -9,9 +9,13 @@ const form = {
       const { sentMessageCount } = messageSent;
       const siteKey = process.env.RECAPTCHA_SITE_KEY;
 
-      return res.render("form", { messageWaiting, sentMessageCount, siteKey });
+      await CounterVisitor.incrementCounter();
+      const visitor = await CounterVisitor.getVisitorCounter();
+      const { landingVisitCount } = visitor;
+
+      return res.render("form", { messageWaiting, sentMessageCount, siteKey, landingVisitCount });
     } catch (error) {
-      console.log(err);
+      console.log(error);
       res.redirect("/");
     }
   },
