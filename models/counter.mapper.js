@@ -9,8 +9,7 @@ class CounterMapper extends CoreMapper {
   }
 
   async incrementCounter() {
-    const res = await this.counter.findOneAndUpdate({ _id: "singleton" }, { $inc: { sentMessageCount: 1 } });
-    return res.sentCount;
+    await this.counter.findOneAndUpdate({ _id: "singleton" }, { $inc: { sentMessageCount: 1 } });
   }
 }
 
