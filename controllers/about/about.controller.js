@@ -1,6 +1,11 @@
+const { CounterVisitor } = require("../../models/index.mapper.js");
+
 const about = {
-  getAbout: (req, res) => {
-    res.render("about");
+  getAbout: async (req, res) => {
+    const visitor = await CounterVisitor.getVisitorCounter();
+    const { landingVisitCount } = visitor;
+
+    res.render("about", { landingVisitCount });
   },
 };
 
