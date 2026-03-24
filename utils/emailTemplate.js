@@ -37,4 +37,4 @@ function buildProgrammedMessageEmail({ firstName, delayLabel, userMessage }) {
   return { subject, text, html };
 }
 
-module.exports = { buildProgrammedMessageEmail };
+export default buildProgrammedMessageEmail;

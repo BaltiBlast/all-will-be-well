@@ -1,7 +1,7 @@
-const cron = require("node-cron");
-const transporter = require("../nodemailer.js");
-const { MessageMapper, CounterMapper } = require("../../models/index.mapper.js");
-const { buildProgrammedMessageEmail } = require("../../utils/emailTemplate.js");
+import cron from "node-cron";
+import transporter from "../nodemailer.js";
+import { MessageMapper, CounterMapper } from "../../models/index.mapper.js";
+import buildProgrammedMessageEmail from "../../utils/emailTemplate.js";
 
 const dailyTasks = {
   // ================================================================================ //
@@ -42,7 +42,7 @@ const dailyTasks = {
       {
         scheduled: true,
         timezone: "Europe/Paris",
-      }
+      },
     );
   },
 
@@ -132,4 +132,4 @@ const dailyTasks = {
   },
 };
 
-module.exports = dailyTasks;
+export default dailyTasks;

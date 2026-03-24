@@ -1,9 +1,12 @@
-const express = require("express");
-const router = require("./router.js");
-const session = require("express-session");
-const flash = require("connect-flash");
-const flashMessage = require("./middlewares/message.middleware.js");
-const messageDispatch = require("./services/scheduler/dailyTasks.job.js");
+import express from "express";
+import router from "./router.js";
+import session from "express-session";
+import flash from "connect-flash";
+import flashMessage from "./middlewares/message.middleware.js";
+import messageDispatch from "./services/scheduler/dailyTasks.job.js";
+import { resolveMeta } from "./utils/metaRegistry.js";
+
+// console.log(resolveMeta.resolveMeta);
 
 const app = express();
 const PORT = 3000;
@@ -14,8 +17,13 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: { maxAge: 10 * 60 * 1000 },
-  })
+  }),
 );
+
+app.use((req, res, next) => {
+  res.locals.meta = resolveMeta(req);
+  next();
+});
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));

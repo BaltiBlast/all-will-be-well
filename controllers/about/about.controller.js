@@ -1,4 +1,4 @@
-const { CounterVisitor } = require("../../models/index.mapper.js");
+import { CounterVisitor } from "../../models/index.mapper.js";
 
 const about = {
   getAbout: async (req, res) => {
@@ -9,4 +9,4 @@ const about = {
   },
 };
 
-module.exports = about;
+export default about;

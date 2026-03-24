@@ -1,5 +1,5 @@
-const CoreMapper = require("./core.mapper.js");
-const counterSchema = require("../schemas/counter.schema.js");
+import CoreMapper from "./core.mapper.js";
+import counterSchema from "../schemas/counter.schema.js";
 
 class CounterMapper extends CoreMapper {
   counter = this.mongoose.model("Counter", counterSchema);
@@ -13,4 +13,4 @@ class CounterMapper extends CoreMapper {
   }
 }
 
-module.exports = CounterMapper;
+export default CounterMapper;

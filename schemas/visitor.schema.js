@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const visitorCounterSchema = new Schema(
@@ -6,7 +6,7 @@ const visitorCounterSchema = new Schema(
     _id: { type: String, default: "singleton" },
     landingVisitCount: { type: Number, default: 0, required: true },
   },
-  { timestamps: false }
+  { timestamps: false },
 );
 
-module.exports = visitorCounterSchema;
+export default visitorCounterSchema;

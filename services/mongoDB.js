@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-require("dotenv").config();
+import mongoose from "mongoose";
+import "dotenv/config";
 
 const { DB_URI, NODE_ENV } = process.env;
 
@@ -15,4 +15,4 @@ mongoose
     process.exit(1);
   });
 
-module.exports = mongoose;
+export default mongoose;

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const messageCounterSchema = new Schema(
@@ -6,7 +6,7 @@ const messageCounterSchema = new Schema(
     _id: { type: String, default: "singleton" },
     sentMessageCount: { type: Number, default: 0, required: true },
   },
-  { timestamps: false }
+  { timestamps: false },
 );
 
-module.exports = messageCounterSchema;
+export default messageCounterSchema;

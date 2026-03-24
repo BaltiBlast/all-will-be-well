@@ -1,5 +1,12 @@
-const querystring = require("node:querystring");
-const { MessageMapper, CounterMapper, CounterVisitor } = require("../../models/index.mapper.js");
+import querystring from "node:querystring";
+import { CounterMapper, CounterVisitor, MessageMapper } from "../../models/index.mapper.js";
+// import CounterMapper from "../../models/index.mapper.js";
+// import MessageMapper from "../../models/index.mapper.js";
+// import CounterVisitor from "../../models/index.mapper.js";
+
+// import * as model from "../../models/index.mapper.js";
+
+console.log(CounterMapper);
 
 const form = {
   getForm: async (req, res) => {
@@ -105,4 +112,4 @@ const form = {
   },
 };
 
-module.exports = form;
+export default form;

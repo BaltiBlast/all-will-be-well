@@ -4,4 +4,4 @@ class CoreMapper {
   }
 }
 
-module.exports = CoreMapper;
+export default CoreMapper;

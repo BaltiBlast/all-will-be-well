@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const messageSchema = new Schema(
@@ -21,7 +21,7 @@ const messageSchema = new Schema(
       default: "pending",
     },
   },
-  { collection: "messages", timestamps: true }
+  { collection: "messages", timestamps: true },
 );
 
-module.exports = messageSchema;
+export default messageSchema;

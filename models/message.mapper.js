@@ -1,5 +1,5 @@
-const CoreMapper = require("./core.mapper.js");
-const messageSchema = require("../schemas/message.schema.js");
+import CoreMapper from "./core.mapper.js";
+import messageSchema from "../schemas/message.schema.js";
 
 class MessageMapper extends CoreMapper {
   message = this.mongoose.model("Messages", messageSchema);
@@ -24,4 +24,4 @@ class MessageMapper extends CoreMapper {
   }
 }
 
-module.exports = MessageMapper;
+export default MessageMapper;

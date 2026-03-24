@@ -1,5 +1,5 @@
-const CoreMapper = require("./core.mapper.js");
-const counterVisitorSchema = require("../schemas/visitor.schema.js");
+import CoreMapper from "./core.mapper.js";
+import counterVisitorSchema from "../schemas/visitor.schema.js";
 
 class VisitorMapper extends CoreMapper {
   counter = this.mongoose.models.Visitor || this.mongoose.model("Visitor", counterVisitorSchema);
@@ -14,11 +14,11 @@ class VisitorMapper extends CoreMapper {
       .findOneAndUpdate(
         { _id: "singleton" },
         { $inc: { landingVisitCount: 1 } },
-        { new: true, upsert: true, setDefaultsOnInsert: true }
+        { new: true, upsert: true, setDefaultsOnInsert: true },
       )
       .lean();
     return res.landingVisitCount;
   }
 }
 
-module.exports = VisitorMapper;
+export default VisitorMapper;

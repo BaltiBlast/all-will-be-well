@@ -4,4 +4,4 @@ const error404 = {
   },
 };
 
-module.exports = error404;
+export default error404;

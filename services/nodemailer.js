@@ -1,5 +1,5 @@
-const nodemailer = require("nodemailer");
-require("dotenv").config();
+import nodemailer from "nodemailer";
+import "dotenv/config";
 
 const { GOOGLE_MAIL_USER, GOOGLE_APP_PASSWORD } = process.env;
 
@@ -11,4 +11,4 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-module.exports = transporter;
+export default transporter;

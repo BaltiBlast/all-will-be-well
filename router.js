@@ -1,13 +1,13 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
 
-const form = require("./controllers/form/form.controller.js");
+import form from "./controllers/form/form.controller.js";
 const { getForm, postMessage } = form;
 
-const about = require("./controllers/about/about.controller.js");
+import about from "./controllers/about/about.controller.js";
 const { getAbout } = about;
 
-const error404 = require("./controllers/errors/404.controller.js");
+import error404 from "./controllers/errors/404.controller.js";
 const { get404 } = error404;
 
 router.get("/", getForm);
@@ -17,4 +17,4 @@ router.post("/add-message", postMessage);
 // 404
 router.use(get404);
 
-module.exports = router;
+export default router;

@@ -1,10 +1,14 @@
-const mongoose = require("../services/mongoDB.js");
-const Message = require("./message.mapper.js");
-const Counter = require("./counter.mapper.js");
-const Visitor = require("./visitor.mapper.js");
+import mongoose from "../services/mongoDB.js";
+import Message from "./message.mapper.js";
+import Counter from "./counter.mapper.js";
+import Visitor from "./visitor.mapper.js";
 
-module.exports = {
-  MessageMapper: new Message(mongoose),
-  CounterMapper: new Counter(mongoose),
-  CounterVisitor: new Visitor(mongoose),
-};
+export const MessageMapper = new Message(mongoose);
+export const CounterMapper = new Counter(mongoose);
+export const CounterVisitor = new Visitor(mongoose);
+
+// export default {
+//   MessageMapper: new Message(mongoose),
+//   CounterMapper: new Counter(mongoose),
+//   CounterVisitor: new Visitor(mongoose),
+// };
