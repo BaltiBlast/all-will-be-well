@@ -1,7 +1,5 @@
 <%- include('partials/head.ejs'); -%>
 
-<% console.log(locals) %>
-
 <div>
   <section class="title">
     <article class="tagline-bg shadow lato-bold">
@@ -11,7 +9,7 @@
   </section>
 
   <article class="grid counter">
-    <p class="lato-light no-marge">Messages programmés : <span class="lato-bold"><%=messageWaiting%></span></p>
+    <p class="lato-light no-marge">Messages programmés : <span class="lato-bold"><%=messagePending%></span></p>
     <p class="lato-light no-marge">Messages envoyés : <span class="lato-bold"><%=sentMessageCount%></span></p>
   </article>
 

@@ -6,9 +6,3 @@ import Visitor from "./visitor.mapper.js";
 export const MessageMapper = new Message(mongoose);
 export const CounterMapper = new Counter(mongoose);
 export const CounterVisitor = new Visitor(mongoose);
-
-// export default {
-//   MessageMapper: new Message(mongoose),
-//   CounterMapper: new Counter(mongoose),
-//   CounterVisitor: new Visitor(mongoose),
-// };

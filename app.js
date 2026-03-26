@@ -1,12 +1,11 @@
+import "dotenv/config";
 import express from "express";
-import router from "./router.js";
+import router from "./routes/index.js";
 import session from "express-session";
 import flash from "connect-flash";
 import flashMessage from "./middlewares/message.middleware.js";
 import messageDispatch from "./services/scheduler/dailyTasks.job.js";
 import { resolveMeta } from "./utils/metaRegistry.js";
-
-// console.log(resolveMeta.resolveMeta);
 
 const app = express();
 const PORT = 3000;
