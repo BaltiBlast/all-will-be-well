@@ -136,15 +136,56 @@ footer img {
   opacity: 0;
 }
 
-@media (max-width: 576px) {
-  .social-link {
-    gap: 1.5rem;
-  }
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* ============================ */
 
-  nav {
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+#burger-button,
+#close-menu-button {
+  background: none;
+  border: none;
+  color: #047878;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+#close-menu-button {
+  display: block;
+  margin-left: auto;
+}
+
+#side-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+#side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  padding: 2rem;
+  background: white;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+  visibility: hidden;
+  z-index: 2;
+}
+
+#side-menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+#side-menu.open {
+  transform: translateX(0);
+  visibility: visible;
 }

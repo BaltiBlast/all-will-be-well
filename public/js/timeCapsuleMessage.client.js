@@ -1,4 +1,9 @@
 import { placeholders } from "./utils.script.js";
+
+// ================================================================================ //
+// SELECTORS
+// ================================================================================ //
+// Form
 const formMessage = document.getElementById("formMessage");
 const textarea = document.getElementById("message");
 const modal = document.getElementById("confirmFormMessage");

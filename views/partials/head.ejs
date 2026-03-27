@@ -30,19 +30,36 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.cyan.min.css" />
+
+    <!-- JS BURGER MENU -->
+     <script type="module" src="/js/burgerMenu.client.js"></script>
+
   </head>
   <body class="container">
     <% if (typeof navbar === "undefined" || navbar !== false) { %>
     <nav>
       <ul>
         <li>
-          <h1 class="pacifico"><a class="link-undecorate" href="/">All Will Be Well</a></h1>
+          <h1 class="pacifico">
+            <a class="link-undecorate" href="/">All Will Be Well</a>
+          </h1>
         </li>
       </ul>
+
+      <ul>
+        <li>
+          <button id="burger-button" type="button">☰</button>
+        </li>
+      </ul>
+    </nav>
+
+    <aside id="side-menu">
+      <button id="close-menu-button" type="button">✕</button>
+
       <ul>
         <li><a href="/">Message</a></li>
         <li><a href="/about">About</a></li>
       </ul>
-    </nav>
+    </aside>
     <% } %>
 

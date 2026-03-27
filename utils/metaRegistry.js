@@ -21,27 +21,8 @@ const metaPages = [
   },
   {
     route: "/about",
-    title: "À propos – Capsule temporelle gratuite par Florian Fougeray",
+    title: "À propos | Capsule temporelle gratuite par Florian Fougeray",
     description: "Pourquoi l’app est gratuite, qui l’a créée et comment les données sont gérées.",
-  },
-  // --- Pages SEO ---
-  {
-    route: "/envoyer-message-au-futur",
-    title: "Envoyer un message au futur – Gratuit et simple",
-    description:
-      "Créez une capsule temporelle numérique gratuite et laissez un message à votre futur vous, sans inscription ni publicité.",
-  },
-  {
-    route: "/capsule-temporelle-en-ligne",
-    title: "Capsule temporelle en ligne – Service 100% gratuit",
-    description:
-      "Écrivez aujourd’hui, recevez plus tard. Une capsule temporelle en ligne gratuite, pensée pour une expérience simple et sécurisée.",
-  },
-  {
-    route: "/application-nodejs-capsule-temporelle",
-    title: "Application Node.js de capsule temporelle – Projet open & gratuit",
-    description:
-      "Retour d’expérience et démonstration d’une application Node.js/EJS/Mongo gratuite pour envoyer un message à son futur soi.",
   },
 ];
 
