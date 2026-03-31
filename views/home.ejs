@@ -1,0 +1,45 @@
+<%- include('partials/head.ejs'); -%>
+
+<div class="home">
+  <section class="home__hero">
+    <h1 class="home__title light">
+      <span>Un outil <span class="semi-bold">simple</span> pour prendre du <span class="semi-bold">recul</span></span>
+      <span
+        >écrire pour aller <span class="semi-bold">mieux</span> et voir plus <span class="semi-bold">clair</span></span
+      >
+    </h1>
+    <p class="light">Messages pour plus tard, réflexion personnelle et aide à la décision, gratuitement</p>
+    <a href="#tools" class="extra-bold">Découvrir les outils</a>
+  </section>
+
+  <section class="home__tools" id="tools">
+    <h2 class="home__tools__title"><span>Les outils à ta</span> <span>disposition</span></h2>
+    <div class="home__tools__card extra-bold">
+      <h3>Lettre à soi-même</h3>
+
+      <div class="home__tools__separator"></div>
+
+      <p class="home__tools__card__content light">
+        Écris un message aujourd’hui et reçois-le plus tard par email pour prendre du recul sur ce que tu vis.
+      </p>
+      <p class="light"><span class="semi-bold">Avantage :</span> Pour prendre du recul et voir ce qui a changé.</p>
+      <a href="/tool/message" class="home__tools__card__link extra-bold">Écrire ma lettre</a>
+    </div>
+
+    <div class="home__tools__card extra-bold">
+      <h3>Aide à la décision</h3>
+
+      <div class="home__tools__separator"></div>
+
+      <p class="home__tools__card__content light">
+        Liste les points positifs et négatifs d’une situation pour organiser tes pensées et voir plus clair.
+      </p>
+      <p class="light">
+        <span class="semi-bold">Avantage :</span> Pour faire le point plus sereinement avant de choisir.
+      </p>
+      <a href="/tool/decision-helper" class="home__tools__card__link extra-bold">Comparer les pour et les contre</a>
+    </div>
+  </section>
+</div>
+
+<%- include('partials/footer.ejs'); -%>

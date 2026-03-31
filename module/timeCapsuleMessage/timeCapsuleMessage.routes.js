@@ -3,7 +3,7 @@ import { getTimeCapsuleMessagePage, postNewTimeCapsuleMessage } from "./timeCaps
 
 const timeCapsuleMessageRouter = express.Router();
 
-timeCapsuleMessageRouter.get("/", getTimeCapsuleMessagePage);
+timeCapsuleMessageRouter.get("/message", getTimeCapsuleMessagePage);
 timeCapsuleMessageRouter.post("/add-message", postNewTimeCapsuleMessage);
 
 export default timeCapsuleMessageRouter;

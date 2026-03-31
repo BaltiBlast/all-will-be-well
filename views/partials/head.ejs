@@ -20,19 +20,16 @@
     <link rel="icon" href="/assets/svg/green-heart.svg" />
 
     <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.cyan.min.css" />
 
     <!-- JS BURGER MENU -->
-     <script type="module" src="/js/burgerMenu.client.js"></script>
+     <script type="module" src="/js/global.client.js"></script>
 
   </head>
   <body class="container">
@@ -40,7 +37,7 @@
     <nav>
       <ul>
         <li>
-          <h1 class="pacifico">
+          <h1 class="regular">
             <a class="link-undecorate" href="/">All Will Be Well</a>
           </h1>
         </li>
@@ -57,9 +54,10 @@
       <button id="close-menu-button" type="button">✕</button>
 
       <ul>
-        <li><a href="/">Message</a></li>
+        <li><a href="/tool/message">Message</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </aside>
+
     <% } %>
 
