@@ -1,5 +1,3 @@
-import { placeholders } from "./utils.script.js";
-
 // ================================================================================ //
 // SELECTORS
 // ================================================================================ //
@@ -9,6 +7,24 @@ const textarea = document.getElementById("message");
 const modal = document.getElementById("confirmFormMessage");
 const closeModalButton = document.getElementById("messageFormClosedButton");
 const formSubmitButton = document.getElementById("messageFormSubmitButton");
+
+const placeholders = [
+  "Qu’aimerais-tu raconter à ton futur toi aujourd’hui ?",
+  "Dans quel état d’esprit es-tu en ce moment ?",
+  "Que vis-tu en ce moment, avec tes mots ?",
+  "Y a-t-il quelque chose que tu aimerais relire plus tard ?",
+  "Qu’aimerais-tu ne pas oublier de cette période ?",
+  "Que ressens-tu aujourd’hui ?",
+  "Qu’est-ce qui occupe ton esprit en ce moment ?",
+  "Y a-t-il une situation sur laquelle tu aimerais prendre du recul ?",
+  "Qu’aimerais-tu dire à la personne que tu seras dans quelque temps ?",
+  "Que voudrais-tu observer chez toi dans quelques jours ou quelques mois ?",
+  "Y a-t-il un choix, un doute ou une étape que tu veux poser par écrit ?",
+  "Qu’espères-tu voir évoluer d’ici quelque temps ?",
+  "Si tu relis ce message plus tard, qu’aimerais-tu y retrouver ?",
+  "Qu’aimerais-tu te rappeler de ce moment précis ?",
+  "Que voudrais-tu confier à ton futur toi, simplement ?",
+];
 
 const messageForm = {
   init: () => {
@@ -20,6 +36,7 @@ const messageForm = {
   // ================================================================================ //
   // Textarea placeholder's animation
   // ================================================================================ //
+
   setPlaceholderText: (fakePlaceholder, text) => {
     fakePlaceholder.textContent = text;
   },
@@ -56,6 +73,7 @@ const messageForm = {
   // ================================================================================ //
   // Textarea character counter
   // ================================================================================ //
+
   characterCounter: () => {
     const counter = document.getElementById("char-counter");
     const max = textarea.getAttribute("maxlength");

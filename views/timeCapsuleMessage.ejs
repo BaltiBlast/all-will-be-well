@@ -1,23 +1,26 @@
 <%- include('partials/head.ejs'); -%>
 
 <div>
-  <section class="title">
-    <article class="tagline-bg shadow lato-bold">
-      <p class="tagline lato-bold">Raconte où tu en es aujourd’hui,</p>
-    </article>
-    <p class="subline lato-thin">ton futur toi verra le <span class="lato-regular">chemin parcouru.</span></p>
+  <section class="message__title">
+    <h1 class="extra-bold"><span>Lettre à </span><span>soi-même</span></h1>
+    <p>
+      Cet outil te permet d’écrire un message à ton futur toi et de le recevoir plus tard par email.
+      C’est une façon simple de poser tes pensées, de garder une trace de ce que tu ressens
+      aujourd’hui et de constater, avec le temps, que tout évolue. Une lettre à soi-même peut
+      aider à voir plus clair, retrouver du recul et avancer plus sereinement.
+    </p>
   </section>
 
-  <article class="grid counter">
-    <p class="lato-light no-marge">Messages programmés : <span class="lato-bold"><%=messagePending%></span></p>
-    <p class="lato-light no-marge">Messages envoyés : <span class="lato-bold"><%=sentMessageCount%></span></p>
+  <article class="grid counter card">
+    <p class="light no-marge">Messages programmés : <span class="bold"><%=messagePending%></span></p>
+    <p class="light no-marge">Messages envoyés : <span class="bold"><%=sentMessageCount%></span></p>
   </article>
 
-  <form id="formMessage" action="/add-message" method="POST">
-    <article>
+  <form id="formMessage" action="/tool/add-message" method="POST">
+    <article class="card">
       <!-- FLASH MESSAGE -->
       <% if (messages && messages.length > 0) { %> <% messages.forEach(m => { %>
-      <p class="<%= m.type %>-message"><%= m.text %></p>
+      <small class="<%= m.type %>-message extra-bold"><%= m.text %></samll>
       <% }) %> <% } %>
       <label>
         Prénom
@@ -48,14 +51,14 @@
       </label>
 
       <label>
-        Message <small id="char-counter">0 / 2000</small>
+        Message <small id="char-counter">0 / 5000</small>
         <div class="textarea-wrapper">
           <textarea
             id="message"
             name="message"
             rows="6"
             placeholder=""
-            maxlength="2000"
+            maxlength="5000"
             minlength="10"
             required
           ><%= messages[0]?.data?.message || '' %></textarea>
@@ -83,6 +86,5 @@
 </div>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script type="module" src="/js/timeCapsuleMessage.client.js"></script>
 
 <%- include('partials/footer.ejs'); -%>

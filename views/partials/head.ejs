@@ -28,6 +28,18 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.cyan.min.css" />
 
+    <% if (meta.styles && meta.styles.length) { %>
+      <% meta.styles.forEach((style) => { %>
+        <link rel="stylesheet" href="/css/<%= style %>.css" />
+      <% }) %>
+    <% } %>
+
+    <% if (meta.scripts && meta.scripts.length) { %>
+      <% meta.scripts.forEach((script) => { %>
+        <script type="module" src="/js/<%= script %>.client.js"></script>
+      <% }) %>
+    <% } %>
+
     <!-- JS BURGER MENU -->
      <script type="module" src="/js/global.client.js"></script>
 

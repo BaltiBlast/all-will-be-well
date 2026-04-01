@@ -18,6 +18,14 @@ const metaPages = [
     route: "/",
     title: "Envoyez un message à votre futur vous – 100% gratuit",
     description: "Capsule temporelle numérique gratuite : écrivez aujourd’hui, recevez demain, dans 1 an ou 10 ans.",
+    styles: ["home"],
+  },
+  {
+    route: "/tool/message",
+    title: "Envoyez un message à votre futur vous – 100% gratuit",
+    description: "Capsule temporelle numérique gratuite : écrivez aujourd’hui, recevez demain, dans 1 an ou 10 ans.",
+    styles: ["timeCapsuleMessage"],
+    scripts: ["timeCapsuleMessage"],
   },
   {
     route: "/about",

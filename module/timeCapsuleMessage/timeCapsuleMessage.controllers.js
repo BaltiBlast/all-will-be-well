@@ -4,10 +4,10 @@ export async function getTimeCapsuleMessagePage(req, res) {
   try {
     const pageData = await services.timeCapsuleMessagePageData();
     const siteKey = process.env.RECAPTCHA_SITE_KEY;
-    return res.render("form", { ...pageData, siteKey });
+    return res.render("timeCapsuleMessage", { ...pageData, siteKey });
   } catch (error) {
     console.log(error);
-    res.redirect("/");
+    res.redirect("/tool/message");
   }
 }
 
@@ -33,14 +33,14 @@ export async function postNewTimeCapsuleMessage(req, res) {
           text: result.error.text,
           data: req.body,
         });
-        return res.redirect("/");
+        return res.redirect("/tool/message");
       }
 
       req.flash("messages", {
         type: "error",
         text: result.error.text,
       });
-      return res.redirect("/");
+      return res.redirect("/tool/message");
     }
 
     req.flash("messages", {
@@ -48,7 +48,7 @@ export async function postNewTimeCapsuleMessage(req, res) {
       text: result.success.text,
     });
 
-    return res.redirect("/");
+    return res.redirect("/tool/message");
   } catch (err) {
     console.error(err);
 
@@ -57,6 +57,6 @@ export async function postNewTimeCapsuleMessage(req, res) {
       text: "Une erreur est survenue. Veuillez réessayer plus tard",
     });
 
-    return res.redirect("/");
+    return res.redirect("/tool/message");
   }
 }

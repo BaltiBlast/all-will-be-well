@@ -1,127 +1,5 @@
+@import url("./global.css");
 @import url("./fonts.css");
-
-/* ======================================================== */
-/* Generic */
-/* ======================================================== */
-:root {
-  --primaryColor: #046a6a;
-
-  /* marges */
-  --m-margin: 0.8em;
-  --l-margin: 1.5em;
-  --xl-margin: 2.2em;
-  --xxl-margin: 5em;
-  --big-margin: 15em;
-}
-.link-undecorate {
-  text-decoration: none;
-}
-
-.error-message {
-  color: #d93526;
-}
-
-.success-message {
-  color: #00895a;
-}
-
-.no-marge {
-  margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-p,
-span {
-  color: var(--primaryColor) !important;
-}
-
-body {
-  position: relative;
-  z-index: 0;
-}
-
-/* ======================================================== */
-/* Home page */
-/* ======================================================== */
-/* nav {
-  margin-bottom: 10rem;
-} */
-
-.home__hero,
-.home__tools {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: var(--big-margin);
-}
-
-.home__title {
-  display: flex;
-  flex-direction: column;
-  border: solid 2px var(--primaryColor);
-  border-radius: 15px;
-  padding: 0.5em;
-  max-width: 1000px;
-  font-size: 2.5rem;
-}
-
-/* Hero */
-.home__hero p {
-  color: var(--primaryColor);
-  text-align: center;
-  margin-top: var(--l-margin);
-  margin-bottom: var(--m-margin);
-  font-size: 1.25rem;
-}
-
-.home__hero a {
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-/* Cards */
-
-.home__tools__title {
-  display: flex;
-  flex-direction: column;
-  font-size: 3.5rem;
-}
-
-.home__tools__separator {
-  width: 100%;
-  height: 1px;
-  background: var(--primaryColor);
-}
-
-.home__tools__card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-radius: 15px;
-  margin: var(--xxl-margin) 0;
-  padding: 2em;
-  box-shadow: 0px 0px 20px rgba(4, 120, 120, 0.1);
-  max-width: 870px;
-  text-align: left;
-}
-
-.home__tools__separator,
-.home__tools__card__content {
-  margin-bottom: var(--l-margin);
-}
-
-.home__tools__card__link {
-  /* display: block; */
-  margin-top: var(--l-margin);
-}
-
-.home__tools__card__content {
-  letter-spacing: 1px;
-}
 
 /* ======================================================== */
 /* Message page */
@@ -140,12 +18,12 @@ body {
 
 #fake-placeholder {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
-  color: #646b79;
+  top: 0;
+  left: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
-  opacity: 1;
+  opacity: 0.8;
+  padding: 1rem;
 }
 
 #fake-placeholder.out {

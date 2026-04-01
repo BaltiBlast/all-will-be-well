@@ -100,7 +100,7 @@ export async function postNewCapsuleMessage({ email, name, message, delay, token
 
     return {
       success: {
-        text: `Message ajouté. À dans ${customDateMessage} 😄 !`,
+        text: `Message ajouté. À dans ${customDateMessage} !`,
       },
     };
   } catch (err) {
