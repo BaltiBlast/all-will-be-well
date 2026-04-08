@@ -31,8 +31,8 @@ const metaPages = [
     route: "/tool/decision-helper",
     title: "Envoyez un message à votre futur vous – 100% gratuit",
     description: "Capsule temporelle numérique gratuite : écrivez aujourd’hui, recevez demain, dans 1 an ou 10 ans.",
-    styles: ["DecisionHelper"],
-    scripts: ["DecisionHelper"],
+    styles: ["decisionHelper"],
+    scripts: ["decisionHelper"],
   },
   {
     route: "/about",
