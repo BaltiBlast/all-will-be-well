@@ -13,23 +13,34 @@ function buildProgrammedMessageEmail({ firstName, delayLabel, userMessage }) {
 
     ${userMessage}
 
+    Tu veux t’écrire un nouveau message ?
+    https://allwillbewell.online/tool/message
+
     — Florian, de All Will Be Well`;
 
   const html = `
     <article style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;line-height:1.6;color:#0f172a;padding:16px;">
         <p>Salut <strong>${firstName}</strong> 👋 !</p>
-        </br>
+        <br>
         <p>Il y a très exactement <strong>${delayLabel}</strong>, tu avais pris un instant pour
         écrire quelques lignes que tu voulais garder pour plus tard ⏱️.</p>
-        </br>
+        <br>
         <p>Comme une petite note glissée dans une enveloppe, en attendant le bon moment pour l’ouvrir.</p>
-        </br>
+        <br>
         <p>Et ce moment est arrivé aujourd’hui ☀️ !</p>
         <p>Voici ce que ton ancien toi voulait te partager:</p>
-        </br>
+        <br>
         <blockquote style="margin:16px 0;padding:12px 16px;border-left:4px solid #046a6a;background:#f8fafc;white-space:pre-wrap;">
         ${userMessage}
         </blockquote>
+
+        <p style="margin-top:24px;">
+        <a
+          href="https://allwillbewell.online/tool/message"
+          style="display:inline-block;padding:12px 18px;background:#046a6a;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:600;"
+        >
+          Programmer un nouveau message
+        </a>
 
         <p style="font-size:12px;">— Florian, de All Will Be Well</p>
     </article>`;

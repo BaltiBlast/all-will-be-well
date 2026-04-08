@@ -24,3 +24,46 @@
 #formMessage label {
   color: var(--primaryColor);
 }
+
+#fake-placeholder {
+  color: var(--pico-form-element-placeholder-color) !important;
+}
+
+.textarea-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.textarea-wrapper textarea {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+#fake-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  opacity: 0.8;
+  padding: 1rem;
+}
+
+#fake-placeholder.out {
+  opacity: 0;
+}
+
+.counter {
+  justify-items: center;
+}
+
+.recaptcha-wrapper {
+  transform: scale(0.9);
+  transform-origin: 0 0;
+}
+
+.g-recaptcha {
+  margin: 0 auto;
+}
