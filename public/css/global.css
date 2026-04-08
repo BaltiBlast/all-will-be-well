@@ -37,6 +37,10 @@ span {
   color: var(--primaryColor) !important;
 }
 
+li {
+  list-style: none !important;
+}
+
 article {
   box-shadow: 0px 0px 20px rgba(4, 120, 120, 0.1) !important;
 }

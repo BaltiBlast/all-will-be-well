@@ -28,6 +28,13 @@ const metaPages = [
     scripts: ["timeCapsuleMessage"],
   },
   {
+    route: "/tool/decision-helper",
+    title: "Envoyez un message à votre futur vous – 100% gratuit",
+    description: "Capsule temporelle numérique gratuite : écrivez aujourd’hui, recevez demain, dans 1 an ou 10 ans.",
+    styles: ["DecisionHelper"],
+    scripts: ["DecisionHelper"],
+  },
+  {
     route: "/about",
     title: "À propos | Capsule temporelle gratuite par Florian Fougeray",
     description: "Pourquoi l’app est gratuite, qui l’a créée et comment les données sont gérées.",

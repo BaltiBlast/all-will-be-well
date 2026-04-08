@@ -1,0 +1,44 @@
+<%- include('partials/head.ejs'); -%>
+
+<div>
+  <section class="message__title">
+    <h1 class="extra-bold"><span>Comparer les </span><span>pour et les contre</span></h1>
+    <p>
+      Cet outil t’aide à comparer les points positifs et négatifs d’une situation pour y voir plus clair. C’est une
+      façon simple d’organiser tes pensées, de prendre du recul et de faire le point avant de choisir. Une liste de pour
+      et de contre peut aider à sortir du flou, mieux comprendre ce qui compte vraiment et avancer plus sereinement.
+    </p>
+  </section>
+
+  <section class="grid">
+    <div class="pros">
+      <h2 id="pros-title">Pour</h2>
+
+      <ul id="pros-list">
+        <li>
+          <input type="text" placeholder="Ajouter un argument pour" />
+        </li>
+      </ul>
+
+      <footer>
+        <button id="pros" type="button" disabled>+ Pour</button>
+      </footer>
+    </div>
+
+    <div class="cons">
+      <h2 id="cons-title">Contre</h2>
+
+      <ul id="cons-list">
+        <li>
+          <input type="text" placeholder="Ajouter un argument contre" />
+        </li>
+      </ul>
+
+      <footer>
+        <button id="cons" type="button" disabled>+ Contre</button>
+      </footer>
+    </div>
+  </section>
+</div>
+
+<%- include('partials/footer.ejs'); -%>

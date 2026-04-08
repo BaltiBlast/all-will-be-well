@@ -4,9 +4,17 @@ const router = express.Router();
 import timeCapsuleMessageRouter from "../module/timeCapsuleMessage/timeCapsuleMessage.routes.js";
 import aboutPageRouter from "../module/about/about.routers.js";
 import homeRouter from "../module/home/home.routes.js";
+import decisionHelper from "../module/decisionHelper/decisionHelper.routes.js";
 
+// ================================= //
 // Router
+// ================================= //
+
+// Tools
 router.use("/tool", timeCapsuleMessageRouter);
+router.use("/tool", decisionHelper);
+
+// Generic
 router.use(aboutPageRouter);
 router.use(homeRouter);
 
