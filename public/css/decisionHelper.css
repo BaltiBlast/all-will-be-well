@@ -6,29 +6,6 @@ ul {
   padding: 0;
 }
 
-.message__title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: var(--big-margin);
-}
-
-.message__title h1 {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 3.5rem;
-}
-
-.message__title p {
-  max-width: 950px;
-  text-align: center;
-  letter-spacing: 2%;
-  line-height: 1.5rem;
-  margin: var(--xxl-margin) 0;
-}
-
 .list-item {
   display: flex;
   gap: 10px;

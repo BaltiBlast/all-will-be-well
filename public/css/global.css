@@ -4,6 +4,7 @@
 :root {
   --primaryColor: #046a6a;
   --errorColor: #d93526;
+  --successColor: #00895a;
 
   /* marges */
   --m-margin: 0.8em;
@@ -11,21 +12,6 @@
   --xl-margin: 2.2em;
   --xxl-margin: 5em;
   --big-margin: 15em;
-}
-.link-undecorate {
-  text-decoration: none;
-}
-
-.error-message {
-  color: var(--errorColor);
-}
-
-.success-message {
-  color: #00895a;
-}
-
-.no-marge {
-  margin: 0;
 }
 
 h1,
@@ -52,4 +38,56 @@ body {
 
 footer {
   margin-top: var(--xxl-margin);
+}
+
+/* ======================================================== */
+/* Custom class */
+/* ======================================================== */
+.link-undecorate {
+  text-decoration: none;
+}
+
+.error-message {
+  color: var(--errorColor);
+}
+
+.success-message {
+  color: var(--successColor);
+}
+
+.no-marge {
+  margin: 0;
+}
+
+.box-card {
+  border-radius: 15px;
+  margin-top: var(--xxl-margin);
+  padding: 2em;
+  box-shadow: 0px 0px 20px rgba(4, 120, 120, 0.1);
+}
+
+/* ======================================================== */
+/* Tools page structure */
+/* ======================================================== */
+.tool-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--big-margin);
+}
+
+.tool-title h1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+}
+
+.tool-title p {
+  max-width: 950px;
+  text-align: center;
+  letter-spacing: 2%;
+  line-height: 1.5rem;
+  margin: var(--xxl-margin) 0;
 }

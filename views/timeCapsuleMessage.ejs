@@ -1,6 +1,6 @@
 
 <div>
-  <section class="message__title">
+  <section class="tool-title">
     <h1 class="extra-bold"><span>Lettre à </span><span>soi-même</span></h1>
     <p>
       Cet outil te permet d’écrire un message à ton futur toi et de le recevoir plus tard par email.
@@ -10,13 +10,13 @@
     </p>
   </section>
 
-  <article class="grid counter card">
+  <div class="grid counter box-card">
     <p class="light no-marge">Messages programmés : <span class="bold"><%=messagePending%></span></p>
     <p class="light no-marge">Messages envoyés : <span class="bold"><%=sentMessageCount%></span></p>
-  </article>
+  </div>
 
   <form id="formMessage" action="/tool/add-message" method="POST">
-    <article class="card">
+    <article class="box-card">
       <!-- FLASH MESSAGE -->
       <% if (messages && messages.length > 0) { %> <% messages.forEach(m => { %>
       <small class="<%= m.type %>-message extra-bold"><%= m.text %></samll>
