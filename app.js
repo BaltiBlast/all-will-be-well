@@ -6,6 +6,7 @@ import flash from "connect-flash";
 import flashMessage from "./middlewares/message.middleware.js";
 import messageDispatch from "./services/scheduler/dailyTasks.job.js";
 import { resolveMeta } from "./utils/metaRegistry.js";
+import expressLayouts from "express-ejs-layouts";
 
 const app = express();
 const PORT = 3000;
@@ -25,6 +26,9 @@ app.use((req, res, next) => {
 });
 
 app.set("view engine", "ejs");
+app.use(expressLayouts);
+app.set("layout", "layouts/main");
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true, limit: "1mb" }));
 app.use(express.json({ limit: "1mb" }));

@@ -1,5 +1,3 @@
-<%- include('partials/head.ejs'); -%>
-
 <section class="error404">
   <h1><a class="link-undecorate" href="/">All Will Be Well</a></h1>
 
@@ -7,9 +5,3 @@
   <p>Il semblerait que quelqu'un se soit perdu... 👀</p>
   <a href="/" role="button" class="primary">Retour à l’accueil</a>
 </section>
-
-<% if (typeof footer === "undefined" || footer !== false) { %>
-<!--  -->
-<%- include('partials/footer.ejs'); -%>
-<!--  -->
-<% } %>
