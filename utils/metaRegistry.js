@@ -1,50 +1,49 @@
-// utils/metaRegistry.js
 const defaults = {
-  title: "Capsule temporelle gratuite | Florian Fougeray",
+  title: "All Will Be Well | Outils simples pour prendre du recul",
   description:
-    "Écrivez un message à votre futur vous, gratuitement et simplement. Projet par Florian Fougeray, développeur freelance JS.",
+    "Message temporel, cohérence cardiaque et aide à la décision : des outils simples pour respirer, réfléchir et voir plus clair.",
   image: null,
 };
 
-// Normalise: retire query/hash et le slash final (sauf pour '/')
 function normalizePath(path) {
   const clean = path.split("?")[0].replace(/\/+$/, "");
   return clean === "" ? "/" : clean;
 }
 
-// Tableau central: route exacte + métas
 const metaPages = [
   {
     route: "/",
-    title: "Envoyez un message à votre futur vous – 100% gratuit",
-    description: "Capsule temporelle numérique gratuite : écrivez aujourd’hui, recevez demain, dans 1 an ou 10 ans.",
+    title: "All Will Be Well | Outils simples pour prendre du recul",
+    description:
+      "Message temporel, cohérence cardiaque et aide à la décision : des outils simples pour respirer, réfléchir et voir plus clair.",
     styles: ["home"],
   },
   {
     route: "/tool/message",
-    title: "Envoyez un message à votre futur vous – 100% gratuit",
-    description: "Capsule temporelle numérique gratuite : écrivez aujourd’hui, recevez demain, dans 1 an ou 10 ans.",
+    title: "Message temporel | All Will Be Well",
+    description:
+      "Écrivez un message aujourd’hui et recevez-le plus tard. Une capsule temporelle numérique simple, personnelle et gratuite.",
     styles: ["timeCapsuleMessage"],
     scripts: ["timeCapsuleMessage"],
   },
   {
     route: "/tool/decision-helper",
-    title: "Envoyez un message à votre futur vous – 100% gratuit",
-    description: "Capsule temporelle numérique gratuite : écrivez aujourd’hui, recevez demain, dans 1 an ou 10 ans.",
+    title: "Aide à la décision | All Will Be Well",
+    description: "Faites une liste de pour et contre pour clarifier une décision simplement et gratuitement.",
     styles: ["decisionHelper"],
     scripts: ["decisionHelper"],
   },
   {
     route: "/about",
-    title: "À propos | Capsule temporelle gratuite par Florian Fougeray",
-    description: "Pourquoi l’app est gratuite, qui l’a créée et comment les données sont gérées.",
+    title: "À propos | All Will Be Well",
+    description:
+      "Découvrez All Will Be Well, une plateforme d’outils simples pour prendre du recul, mieux respirer et voir plus clair.",
   },
 ];
 
 export function resolveMeta(req, overrides = {}) {
   const currentPath = normalizePath(req.path);
 
-  // Match exact (avec normalisation)
   const base = metaPages.find((p) => p.route === currentPath) || {};
 
   const url = `${req.protocol}://${req.get("host")}${req.originalUrl}`;
